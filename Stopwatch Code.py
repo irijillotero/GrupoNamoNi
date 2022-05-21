@@ -18,3 +18,5 @@ j=0
 
 
 Dri ang second code para sa start
+
+# 1234567890
