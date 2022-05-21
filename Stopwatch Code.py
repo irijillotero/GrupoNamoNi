@@ -13,3 +13,6 @@ time1=0
 time2=0
 i=0
 j=0
+
+
+Addd ko kunyari
