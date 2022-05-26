@@ -40,7 +40,7 @@ def start():
 
 def stop():
     global self_job
-    if self_job is None:
+    if self_job is not None:
         root.after_cancel()
         self_job = None
     stop_button.place()
