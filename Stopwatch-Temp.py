@@ -54,7 +54,7 @@ def clear():
         start()
         stop()
 
-clock_frame=label(text="00:00:00",bg="black",fg="blue",font=("default",100,"bold"))
+clock_frame=Label(text="00:00:00",bg="black",fg="blue",font=("default",100,"bold"))
 start_button=Button(text="START",bg="green",fg="black",command=start,font=("default",50,"bold"))
 stop_button=Button(text="STOP",bg="red",fg="black",command=stop,font=("default",50,"bold"))
 lap_button=Button(text="LAP",bg="#4286f4",fg="black",command=lap,font=("default",50,"bold"))
