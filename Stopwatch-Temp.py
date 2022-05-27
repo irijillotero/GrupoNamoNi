@@ -12,11 +12,11 @@ i=0
 j=0
 time1=0
 
-def create_label(text,x,y):
+def create_label(text,_x,_y):
     label = Label(text,fg='white', bg="black",font=("default",10,"bold"))
     label.place(x=_x,y=_y,width=100,height=45)
 def start():
-    start_button.place()
+    start_button.place_forget()
     stop_button.place(x = 20, y = 300, width=300, height=100)
     global time_elapsed1,time_elapsed2,time_elapsed3,time1,time2
     time2=int(time.time())
@@ -41,7 +41,7 @@ def start():
 def stop():
     global self_job
     if self_job is not None:
-        root.after_cancel()
+        root.after_cancel(self_job) 
         self_job = None
     stop_button.place()
     start_button.place(x = 20, y = 300, width=300, height=100)
@@ -53,16 +53,6 @@ def clear():
     except:
         start()
         stop()
-        
-def lap():
-    global time_elapsed1,time_elapsed2,time_elapsed3,time1,self_job,time2,i,j
-    if i<9:
-        create_label((str(time_elapsed3).zfill(2)+":"+str(time_elapsed2).zfill(2)+ ":" + str(time_elapsed1).zfill(2)),20+(110*i),400+(j*50))
-    else:
-        j+=1
-        i=0
-        create_label((str(time_elapsed3).zfill(2)+":"+str(time_elapsed2).zfill(2)+ ":" + str(time_elapsed1).zfill(2)),20+(110*i),400+(j*50))
-    i+=1
 
 clock_frame=Label(text="00:00:00",bg="black",fg="blue",font=("default",100,"bold"))
 start_button=Button(text="START",bg="green",fg="black",command=start,font=("default",50,"bold"))
