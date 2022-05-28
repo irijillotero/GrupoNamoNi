@@ -24,17 +24,17 @@ def start():
         time1=time2
         if time_elapsed1<59:
             time_elapsed1+=1
-            clock_frame.config(text=(str(time_elapsed3).zfill(2) + ":" + str(time_elapsed2).zfill(2)+ ":" + str(time_elapsed1).zfill(2)))
+            clock_frame.config(text=(str(time_elapsed3).zfill(2) + str(time_elapsed2).zfill(2) + str(time_elapsed1).zfill(2)))
         else:
             time_elapsed1=0
             if time_elapsed2<59:
                 time_elapsed1+=1 
-                clock_frame.config(text=(str(time_elapsed3).zfill(2) + ":" + str(time_elapsed2).zfill(2)+ ":" + str(time_elapsed1).zfill(2))) 
+                clock_frame.config(text=(str(time_elapsed3).zfill(2) +str(time_elapsed2).zfill(2)+str(time_elapsed1).zfill(2))) 
             else:
                 time_elapsed2=0
                 if time_elapsed3<23:
                     time_elapsed3+=1
-                    clock_frame.config(text=(str(time_elapsed3).zfill(2) + ":" + str(time_elapsed2).zfill(2)+ ":" + str(time_elapsed1).zfill(2)))
+                    clock_frame.config(text=(str(time_elapsed3).zfill(2) + str(time_elapsed2).zfill(2)+ str(time_elapsed1).zfill(2)))
                     print("You left it on for too long.")
     self_job=root.after(1000,start)
 
