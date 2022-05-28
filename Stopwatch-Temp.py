@@ -13,12 +13,12 @@ j=0
 time1=0
 
 def create_label(text,_x,_y):
-    label = Label(text,fg='white', bg="black",font=("default",10,"bold"))
+    label = Label(root text=text,fg='white', bg="black",font=("default",10,"bold"))
     label.place(x=_x,y=_y,width=100,height=45)
 def start():
     start_button.place_forget()
     stop_button.place(x = 20, y = 300, width=300, height=100)
-    global time_elapsed1,time_elapsed2,time_elapsed3,time1,time2
+    global time_elapsed1,time_elapsed2,time_elapsed3,time1,self_job,time2
     time2=int(time.time())
     if time2 != time1:
         time1=time2
@@ -43,7 +43,7 @@ def stop():
     if self_job is not None:
         root.after_cancel(self_job) 
         self_job = None
-    stop_button.place()
+    stop_button.place_forget()
     start_button.place(x = 20, y = 300, width=300, height=100)
 
 def clear():
