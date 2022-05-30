@@ -13,11 +13,11 @@ j=0
 time1=0
 
 def create_label(text,_x,_y):
-    label = Label(root text=text,fg='white', bg="black",font=("default",10,"bold"))
+    label = Label(root, text=text,fg='white', bg="black",font=("default",10,"bold"))
     label.place(x=_x,y=_y,width=100,height=45)
 def start():
     start_button.place_forget()
-    stop_button.place(x = 20, y = 300, width=300, height=100)
+    stop_button.place(x = 20, y = 500, width=300, height=100)
     global time_elapsed1,time_elapsed2,time_elapsed3,time1,self_job,time2
     time2=int(time.time())
     if time2 != time1:
@@ -28,13 +28,14 @@ def start():
         else:
             time_elapsed1=0
             if time_elapsed2<59:
-                time_elapsed1+=1 
+                time_elapsed2+=1 
                 clock_frame.config(text=(str(time_elapsed3).zfill(2) + ":" + str(time_elapsed2).zfill(2)+ ":" + str(time_elapsed1).zfill(2))) 
             else:
                 time_elapsed2=0
                 if time_elapsed3<23:
                     time_elapsed3+=1
                     clock_frame.config(text=(str(time_elapsed3).zfill(2) + ":" + str(time_elapsed2).zfill(2)+ ":" + str(time_elapsed1).zfill(2)))
+                else:
                     print("You left it on for too long.")
     self_job=root.after(1000,start)
 
@@ -44,7 +45,7 @@ def stop():
         root.after_cancel(self_job) 
         self_job = None
     stop_button.place_forget()
-    start_button.place(x = 20, y = 300, width=300, height=100)
+    start_button.place(x = 20, y = 500, width=300, height=100)
 
 def clear():
     global time_elapsed1,time_elapsed2,time_elapsed3,time1,self_job,time2,label,i,j
