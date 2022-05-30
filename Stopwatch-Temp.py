@@ -54,7 +54,23 @@ def clear():
     except:
         start()
         stop()
-        
+    clock_frame.config(text="00:00:00")
+    time_elapsed1=0
+    time_elapsed2=0
+    time_elapsed3=0
+    time_1=0
+    time_2=0
+    i=0
+    j=0
+    wig=root.winfo_children()
+    for b in wig:
+        b.place_forget()
+    start_button.place(x = 20, y = 500, width=300, height=100)
+    lap_button.place(x = 660, y = 500, width=300, height=100)
+    reset_button.place(x = 340, y = 500, width=300, height=100)
+    clock_frame.place(x = 200, y = 50, width=600, height=200)
+
+
 def lap():
     global time_elapsed1,time_elapsed2,time_elapsed3,time1,self_job,time2,i,j
     if i<9:
